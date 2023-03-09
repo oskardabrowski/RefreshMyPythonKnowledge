@@ -11,9 +11,6 @@ def get_choices():
     return choices
 
 
-choices = get_choices()
-
-
 def check_win(player, computer):
     print(f"You chose: {player}, Computer chose: {computer}")
     if player == computer:
@@ -24,15 +21,16 @@ def check_win(player, computer):
         else:
             return "Paper covers rock! You lose."
     elif player == "paper":
-        if computer == 'scissors':
-            return "Rock smashes scissors! You win!"
+        if computer == 'rock':
+            return "Paper covers rock! You win!"
         else:
-            return "Paper covers rock! You lose."
+            return "Scissors cuts paper! You lose."
     elif player == "scissors":
-        if computer == 'scissors':
-            return "Rock smashes scissors! You win!"
+        if computer == 'paper':
+            return "Scissors cuts paper! You win!"
         else:
-            return "Paper covers rock! You lose."
+            return "Rock smashes scissors! You lose."
 
 
-dict = {"name": "beau", "color": choices}
+choices = get_choices()
+print(check_win(choices["player"], choices["computer"]))
