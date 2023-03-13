@@ -1,9 +1,12 @@
-number = "20"
-age = int(number)
-# print(isinstance(age, int))
+from enum import Enum
 
-age = 19
 
-check = True if age > 18 else False
+class State(Enum):
+    INACTIVE = 0
+    ACTIVE = 1
 
-print("""        Something is happen""".strip())
+
+print(State.ACTIVE)
+print(State.ACTIVE.value)
+print(State(1))
+print(State['ACTIVE'])
